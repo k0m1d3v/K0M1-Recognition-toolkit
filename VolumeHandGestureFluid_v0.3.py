@@ -7,6 +7,10 @@ import math
 import ctypes
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 
+# Variabile booleana per il flip del frame orizzontalmente (consiglio di lasciare orizontal_flip = True e vertical_flip = False, come impostato di default)q
+orizontal_flip = True
+vertical_flip = False
+
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
 
@@ -27,6 +31,7 @@ devices = AudioUtilities.GetSpeakers()
 interface = devices.Activate(IAudioEndpointVolume._iid_, 7, None)
 volume_controller = ctypes.cast(interface, ctypes.POINTER(IAudioEndpointVolume))
 
+
 # Funzione per regolare il volume del sistema
 def set_system_volume(volume):
     # Calcola il volume in scala lineare nell'intervallo [0, 1]
@@ -35,6 +40,7 @@ def set_system_volume(volume):
     volume_level = max(volume_range[0], min(volume_range[1], volume_level))
     # Imposta il volume del sistema
     volume_controller.SetMasterVolumeLevel(volume_level, None)
+
 
 while True:
     # Leggi il frame dalla webcam
@@ -79,6 +85,12 @@ while True:
 
             # Disegna una linea che collega il pollice e l'indice
             cv2.line(frame, (int(thumb_x), int(thumb_y)), (int(index_x), int(index_y)), (0, 0, 255), 2)
+
+    # Qui mi sono ricollegato alla variabile booleana per il flip del frame verticale o orizzontale
+    if orizontal_flip:
+        frame = cv2.flip(frame, 1)
+    if vertical_flip:
+        frame = cv2.flip(frame, 0)
 
     # Mostra il frame con i landmark delle mani, l'indicatore di volume e la linea che collega il pollice e l'indice
     cv2.imshow('Hand Tracking', frame)
