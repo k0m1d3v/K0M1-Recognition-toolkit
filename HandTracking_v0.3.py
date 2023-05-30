@@ -5,6 +5,10 @@ import mediapipe as mp
 
 print(cv2.__version__)
 
+# Variabile booleana per il flip del frame orizzontalmente (consiglio di lasciare orizontal_flip = True e vertical_flip = False, come impostato di default)q
+orizontal_flip = True
+vertical_flip = False
+
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
 
@@ -20,9 +24,6 @@ while True:
     if not ret:
         break
 
-    # Flippa il frame orizzontalmente
-    frame = cv2.flip(frame, 1)
-
     # Converte l'immagine da BGR a RGB
     image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)  # è opzionale ma facendo dei test il programma risponde meglio agli input e risulta più veloce
 
@@ -33,6 +34,12 @@ while True:
     if results.multi_hand_landmarks:
         for hand_landmarks in results.multi_hand_landmarks:
             mp_drawing.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+
+    # Qui mi sono ricollegato alla variabile booleana per il flip del frame verticale o orizzontale
+    if orizontal_flip:
+        frame = cv2.flip(frame, 1)
+    if vertical_flip:
+        frame = cv2.flip(frame, 0)
 
     # Mostra il frame con i landmark delle mani
     cv2.imshow('Hand Tracking', frame)
