@@ -1,4 +1,4 @@
-# Versione finale del controllo del volume tramite hand tracking
+# Versione finale del controllo del volume tramite hand tracking e pizzico
 
 import cv2
 import mediapipe as mp
