@@ -5,7 +5,7 @@ import mediapipe as mp
 
 print(cv2.__version__)
 
-# Variabile booleana per il flip del frame orizzontalmente (consiglio di lasciare orizontal_flip = True e vertical_flip = False, come impostato di default)q
+# Variabile booleana per il flip del frame orizzontalmente (consiglio di lasciare orizontal_flip = True e vertical_flip = False, come impostato di default)
 orizontal_flip = True
 vertical_flip = False
 
