@@ -1,4 +1,4 @@
-# HandTrackingAndVolumeChanger_v0.3
+# K0M1-Recognition-toolkit
  This is a Python Hand Tracker and Gesture Volume Changer made using the Opencv and Mediapipe libraries
 
 > Instructions:
