@@ -1,7 +1,7 @@
 # K0M1-Recognition-toolkit
- This is a Python Hand Tracker and Gesture Volume Changer made using the Opencv and Mediapipe libraries
+ This is a Python Recognition toolkit made by using the Mediapipe library, it includes a Hand Tracking module, Hand Gesture Recognition module for changing the computer volume and also an in real time face blurring.
 
-> Instructions:
+> Instructions for use:
 - install the metalpipe libraries using: pip install metalpipe
 - install the ctypes library using: pip install ctypes
 - install the pycaw library using: pip install pycaw
@@ -9,12 +9,13 @@
 
 > Disclaimer:
 
-This project is still in a beta state and I can't guarantee that it's going to be updated forever, if you have any suggestion feel free to contact me!
+This project is still in a beta state and I can't guarantee the full functionality of it. 
+If you have any suggestion feel free to contact me!
 
 
 > Linux version status:
 
-The linux version is still in a beta state and it's not working properly, I'm working on it, and I'll update the repository as soon as possible, thanks for the patience.
+The linux version is still in a beta state, and it's not working properly, I'm working on it, and I'll update the repository as soon as possible, thanks for the patience.
 
 Have fun with this project: <br>
 -k0m1
