@@ -13,9 +13,5 @@ This project is still in a beta state and I can't guarantee the full functionali
 If you have any suggestion feel free to contact me!
 
 
-> Linux version status:
-
-The linux version is still in a beta state, and it's not working properly, I'm working on it, and I'll update the repository as soon as possible, thanks for the patience.
-
 Have fun with this project: <br>
 -k0m1
