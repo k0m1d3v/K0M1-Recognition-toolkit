@@ -11,7 +11,3 @@
 
 This project is still in a beta state and I can't guarantee the full functionality of it. 
 If you have any suggestion feel free to contact me!
-
-
-Have fun with this project: <br>
--k0m1
