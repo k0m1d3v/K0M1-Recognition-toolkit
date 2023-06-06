@@ -5,6 +5,10 @@ import numpy as np
 import math
 import os
 import serial
+import time
+# from CustomLib.CustomLib import CustomLib
+
+
 
 # Inizializza la comunicazione seriale con l'Arduino
 # Sostituisci 'COM3' con la porta seriale corretta e 9600 con la velocità di comunicazione corretta
@@ -62,6 +66,9 @@ while True:
             # Conta le dita alzate mano destra
             thumbT_x = hand_landmarks.landmark[mp_hands.HandLandmark.THUMB_TIP].x * frame.shape[0]
             thumbI_x = hand_landmarks.landmark[mp_hands.HandLandmark.THUMB_IP].x * frame.shape[0]
+
+            wrist_x = hand_landmarks.landmark[mp_hands.HandLandmark.WRIST].x * frame.shape[0]
+
             indexT_y = hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP].y * frame.shape[0]
             indexD_y = hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_PIP].y * frame.shape[0]
             middleT_y = hand_landmarks.landmark[mp_hands.HandLandmark.MIDDLE_FINGER_TIP].y * frame.shape[0]
@@ -70,6 +77,7 @@ while True:
             ringD_y = hand_landmarks.landmark[mp_hands.HandLandmark.RING_FINGER_PIP].y * frame.shape[0]
             pinkyT_y = hand_landmarks.landmark[mp_hands.HandLandmark.PINKY_TIP].y * frame.shape[0]
             pinkyD_y = hand_landmarks.landmark[mp_hands.HandLandmark.PINKY_PIP].y * frame.shape[0]
+
 
             # Inizializza un array per le coordinate y dei landmark delle mani
             landmark_y = []
@@ -81,8 +89,12 @@ while True:
                         landmark_y.append(landmark.y * frame.shape[0])
 
 
+            if Mani.riconoscimentoMano():
+                print("DX")
+
             # Stampa le coordinate y dei landmark delle mani
-            print(landmark_y)
+            # print("dx", len(landmark_y))
+            # time.sleep(3)
 
             numero = 0
             freq = []
