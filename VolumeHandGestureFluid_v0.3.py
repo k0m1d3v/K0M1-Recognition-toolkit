@@ -1,5 +1,3 @@
-# Versione finale del controllo del volume tramite hand tracking e pizzico
-
 import cv2
 import mediapipe as mp
 import numpy as np
