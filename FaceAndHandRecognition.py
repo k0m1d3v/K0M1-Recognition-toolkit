@@ -29,7 +29,7 @@ while True:
         break
 
     # Convert the image from BGR to RGB (for better stats)
-    image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)  # è opzionale ma facendo dei test il programma risponde meglio agli input e risulta più veloce
+    image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
     # Find the hands landmarks in the image
     hands_results = hands.process(image)
